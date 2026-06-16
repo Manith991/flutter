@@ -9,7 +9,13 @@ class HomeMovieView extends StatelessWidget {
 
   final listMovies = List.generate(9, (i) => 'assets/images/image${i + 3}.png');
 
-  TabData _buildTab(int index, String title, BuildContext context, bool isPortrait, {bool tappable = false}) {
+  TabData _buildTab(
+    int index,
+    String title,
+    BuildContext context,
+    bool isPortrait, {
+    bool tappable = false,
+  }) {
     return TabData(
       index: index,
       title: Tab(text: title),
@@ -22,13 +28,22 @@ class HomeMovieView extends StatelessWidget {
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
           childAspectRatio: 0.7,
-          children: listMovies.map((movie) => GestureDetector(
-            onTap: tappable ? () => Navigator.push(context, MaterialPageRoute(builder: (_) => MovieDetailView())) : null,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image.asset(movie, fit: BoxFit.cover),
-            ),
-          )).toList(),
+          children: listMovies
+              .map(
+                (movie) => GestureDetector(
+                  onTap: tappable
+                      ? () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => MovieDetailView()),
+                        )
+                      : null,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(movie, fit: BoxFit.cover),
+                  ),
+                ),
+              )
+              .toList(),
         ),
       ),
     );
@@ -36,7 +51,8 @@ class HomeMovieView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
 
     return Scaffold(
       body: SafeArea(
@@ -45,7 +61,10 @@ class HomeMovieView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("What do you want to watch?", style: GoogleFonts.poppins(fontSize: 22)),
+              Text(
+                "What do you want to watch?",
+                style: GoogleFonts.poppins(fontSize: 22),
+              ),
               const SizedBox(height: 10),
               TextField(
                 decoration: InputDecoration(
@@ -65,13 +84,21 @@ class HomeMovieView extends StatelessWidget {
                 height: 250,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: listMovies.map((movie) => Padding(
-                    padding: const EdgeInsets.only(right: 25.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.asset(movie, width: 170, fit: BoxFit.cover),
-                    ),
-                  )).toList(),
+                  children: listMovies
+                      .map(
+                        (movie) => Padding(
+                          padding: const EdgeInsets.only(right: 25.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              movie,
+                              width: 170,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
               const SizedBox(height: 10),
@@ -81,10 +108,16 @@ class HomeMovieView extends StatelessWidget {
                   dividerColor: Colors.transparent,
                   labelColor: Colors.white,
                   dynamicTabs: [
-                    _buildTab(0, "Playing",   context, isPortrait, tappable: true),
-                    _buildTab(1, "Upcoming",  context, isPortrait),
+                    _buildTab(
+                      0,
+                      "Playing",
+                      context,
+                      isPortrait,
+                      tappable: true,
+                    ),
+                    _buildTab(1, "Upcoming", context, isPortrait),
                     _buildTab(2, "Top Rated", context, isPortrait),
-                    _buildTab(3, "Popular",   context, isPortrait),
+                    _buildTab(3, "Popular", context, isPortrait),
                   ],
                   onTabControllerUpdated: (_) {},
                 ),

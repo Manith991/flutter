@@ -25,7 +25,7 @@ class _HomeViewState extends State<HomeView> {
     {
       "name": "MacBook",
       "imageUrl": "assets/images/iphone14.webp",
-      "price": "1250",    
+      "price": "1250",
       "rateCount": 4.5,
     },
     {

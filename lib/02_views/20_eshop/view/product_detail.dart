@@ -20,7 +20,15 @@ class _ProductDetailState extends State<ProductDetail> {
           child: Stack(
             clipBehavior: Clip.none,
             children: [
-              Container(color: Colors.grey, height: size.height * 0.55,width: double.infinity,child: Image.network("https://pngimg.com/d/xbox_PNG101375.png",fit: BoxFit.fill,),),
+              Container(
+                color: Colors.grey,
+                height: size.height * 0.55,
+                width: double.infinity,
+                child: Image.network(
+                  "https://pngimg.com/d/xbox_PNG101375.png",
+                  fit: BoxFit.fill,
+                ),
+              ),
               Positioned(
                 bottom: 0,
                 child: Container(
@@ -241,7 +249,10 @@ class _ProductDetailState extends State<ProductDetail> {
                               ],
                             ),
                             ElevatedButton(
-                              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_)=> CartView())),
+                              onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (_) => CartView()),
+                              ),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: k20ActiveColor,
                                 shape: RoundedRectangleBorder(
@@ -323,7 +334,6 @@ class _ProductDetailState extends State<ProductDetail> {
     );
   }
 }
-
 
 // import 'package:flutter/material.dart';
 // import 'package:my_flutter_codes/02_views/20_eshop/views/cart_view.dart';

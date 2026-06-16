@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class GridViewIG extends StatefulWidget {
   const GridViewIG({super.key});
+
   @override
   State<GridViewIG> createState() => _GridViewIGState();
 }
@@ -17,6 +18,7 @@ class _GridViewIGState extends State<GridViewIG> {
     'https://preview.redd.it/should-i-watch-the-movie-before-starting-the-anime-v0-1rg2ow75j1fc1.jpeg?auto=webp&s=d5125b71f818f72059b151aef2d4b3e9c3858f7f',
     'https://21_http.duniagames.co.id/21_http/content/upload/file/13517222171664771318.jpg',
   ];
+
   @override
   Widget build(BuildContext context) {
     final isPortrait =

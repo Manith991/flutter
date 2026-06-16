@@ -35,7 +35,10 @@ class WatchListView extends StatelessWidget {
             onPressed: () => Navigator.pop(context),
           ),
         ),
-        title: const Text("Watch List", style: TextStyle(color: Colors.white,fontFamily: "Poppins")),
+        title: const Text(
+          "Watch List",
+          style: TextStyle(color: Colors.white, fontFamily: "Poppins"),
+        ),
         centerTitle: true,
       ),
       body: Padding(
@@ -50,6 +53,7 @@ class WatchListView extends StatelessWidget {
 
 class MovieItem extends StatelessWidget {
   final Map<String, String> movie;
+
   const MovieItem({super.key, required this.movie});
 
   @override
@@ -72,19 +76,28 @@ class MovieItem extends StatelessWidget {
                 children: [
                   const Icon(Icons.star_border, color: Colors.orange),
                   const SizedBox(width: 5),
-                  Text(movie["rating"]!, style: const TextStyle(color: Colors.orange)),
+                  Text(
+                    movie["rating"]!,
+                    style: const TextStyle(color: Colors.orange),
+                  ),
                 ],
               ),
               Row(
                 children: [
-                  const Icon(Icons.local_activity_outlined, color: Colors.white),
+                  const Icon(
+                    Icons.local_activity_outlined,
+                    color: Colors.white,
+                  ),
                   const SizedBox(width: 5),
                   Text(movie["genre"]!),
                 ],
               ),
               Row(
                 children: [
-                  const Icon(Icons.calendar_today_outlined, color: Colors.white),
+                  const Icon(
+                    Icons.calendar_today_outlined,
+                    color: Colors.white,
+                  ),
                   const SizedBox(width: 5),
                   Text(movie["year"]!),
                 ],

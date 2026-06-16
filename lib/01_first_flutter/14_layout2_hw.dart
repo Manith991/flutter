@@ -207,6 +207,7 @@ class CategoryBoxReusable extends StatelessWidget {
   final Color? color;
   final IconData iconData;
   final String cateName;
+
   const CategoryBoxReusable({
     super.key,
     required this.iconData,

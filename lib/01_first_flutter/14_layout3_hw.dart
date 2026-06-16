@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_codes/02_views/constant_root.dart';
 
-
 class Layout3Hw extends StatelessWidget {
   final String title;
   final String imgUrl;
+
   const Layout3Hw({super.key, required this.title, required this.imgUrl});
 
   @override

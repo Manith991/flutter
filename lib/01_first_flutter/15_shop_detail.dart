@@ -23,7 +23,6 @@ class ShopDetail extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-
             /// IMAGE HEADER
             Stack(
               children: [
@@ -37,10 +36,7 @@ class ShopDetail extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.4,
                     child: Container(
                       color: Colors.grey,
-                      child: Image.network(
-                        urlImage,
-                        fit: BoxFit.cover,
-                      ),
+                      child: Image.network(urlImage, fit: BoxFit.cover),
                     ),
                   ),
                 ),
@@ -78,7 +74,6 @@ class ShopDetail extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   /// TITLE
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
@@ -102,10 +97,7 @@ class ShopDetail extends StatelessWidget {
                             ],
                           ),
                         ),
-                        const Icon(
-                          Icons.favorite_border,
-                          color: Colors.grey,
-                        ),
+                        const Icon(Icons.favorite_border, color: Colors.grey),
                       ],
                     ),
                   ),
@@ -116,7 +108,6 @@ class ShopDetail extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-
                         /// Quantity
                         Row(
                           children: [
@@ -147,10 +138,7 @@ class ShopDetail extends StatelessWidget {
 
                             IconButton(
                               onPressed: () {},
-                              icon: const Icon(
-                                Icons.add,
-                                color: Colors.green,
-                              ),
+                              icon: const Icon(Icons.add, color: Colors.green),
                             ),
                           ],
                         ),
@@ -227,7 +215,7 @@ class ShopDetail extends StatelessWidget {
                         children: [
                           ...List.generate(
                             5,
-                                (index) => const Icon(
+                            (index) => const Icon(
                               Icons.star,
                               color: Colors.orange,
                               size: 20,

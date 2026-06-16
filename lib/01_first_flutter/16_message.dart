@@ -87,6 +87,7 @@ class _MessageLayoutState extends State<MessageLayout> {
           "In a fast-changing world, playing it safe is the riskiest move. Bold decisions drive innovation.",
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

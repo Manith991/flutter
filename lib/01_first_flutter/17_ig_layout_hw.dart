@@ -5,6 +5,7 @@ class InstagramProfile extends StatelessWidget {
   final String username;
   final String profileUrl;
   final String postUrl;
+
   const InstagramProfile({
     super.key,
     required this.username,

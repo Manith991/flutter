@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_codes/02_views/constant_root.dart';
-const gap = SizedBox(height: 10,);
+
+const gap = SizedBox(height: 10);
+
 class CartView extends StatefulWidget {
   const CartView({super.key});
 
@@ -17,7 +19,6 @@ class _CartViewState extends State<CartView> {
     CartItem(name: "PlayStation Controller", color: "White", price: 75),
     CartItem(name: "Nintendo Switch Pro Controller", color: "Red", price: 70),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -337,9 +338,14 @@ Widget _buildRow(String label, String value) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Text(label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-      Text(value, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+      Text(
+        label,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+      ),
+      Text(
+        value,
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      ),
     ],
   );
 }
-

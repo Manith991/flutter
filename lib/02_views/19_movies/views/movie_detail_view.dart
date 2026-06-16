@@ -37,7 +37,10 @@ class MovieDetailView extends StatelessWidget {
                 bottom: 10,
                 right: 20,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.grey.withValues(alpha: 0.8),
                     borderRadius: BorderRadius.circular(12),
@@ -46,10 +49,7 @@ class MovieDetailView extends StatelessWidget {
                     children: [
                       Icon(Icons.star_border, color: Colors.orange),
                       SizedBox(width: 4),
-                      Text(
-                        "4.6",
-                        style: TextStyle(color: Colors.orange),
-                      ),
+                      Text("4.6", style: TextStyle(color: Colors.orange)),
                     ],
                   ),
                 ),
@@ -111,7 +111,7 @@ class MovieDetailView extends StatelessWidget {
               Text("Action", style: TextStyle(color: kMovieInactiveColor)),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(height: 10),
           Expanded(
             child: DynamicTabBarWidget(
               dividerColor: Colors.transparent,

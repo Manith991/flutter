@@ -58,6 +58,7 @@ class _InstagramLayoutState extends State<InstagramLayout> {
       "postTime": "2mn",
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,7 +85,7 @@ class _InstagramLayoutState extends State<InstagramLayout> {
                   ],
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               SizedBox(
                 height: 110,
                 child: ListView.builder(
@@ -97,25 +98,42 @@ class _InstagramLayoutState extends State<InstagramLayout> {
                       child: Column(
                         children: [
                           GestureDetector(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>InstagramProfile(username: story["username"]!,profileUrl: story["profileUrl"]!,postUrl: story["postUrl"]!)));
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => InstagramProfile(
+                                    username: story["username"]!,
+                                    profileUrl: story["profileUrl"]!,
+                                    postUrl: story["postUrl"]!,
+                                  ),
+                                ),
+                              );
                             },
                             child: Container(
                               padding: const EdgeInsets.all(3),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                border: Border.all(color: Colors.orange, width: 3),
+                                border: Border.all(
+                                  color: Colors.orange,
+                                  width: 3,
+                                ),
                               ),
                               child: CircleAvatar(
                                 radius: 35,
-                                backgroundImage: NetworkImage(story['profileUrl']!),
+                                backgroundImage: NetworkImage(
+                                  story['profileUrl']!,
+                                ),
                               ),
                             ),
                           ),
                           const SizedBox(height: 6),
                           Text(
                             story['username'] ?? '',
-                            style: const TextStyle(fontSize: 12,fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],
